@@ -12,7 +12,7 @@
     <div class="container my-5">
         <h1 class="text-center mb-4">JavaScript Practice Programs</h1>
 
-        <!-- Program 1: Multiplication and Division -->
+        <!-- Task 1: Multiplication and Division -->
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">1. Multiplication and Division</h5>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <!-- Program 2: Largest of Three Numbers -->
+        <!-- Task 2: Largest of Three Numbers -->
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">2. Largest of Three Numbers</h5>
@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <!-- Program 3: Sum or Triple Sum -->
+        <!-- Task 3: Sum or Triple Sum -->
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">3. Sum or Triple Sum</h5>
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <!-- Program 4: Closest to 100 -->
+        <!-- Task 4: Closest to 100 -->
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">4. Closest to 100</h5>
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <!-- Program 5: First Half of an Even-Length String -->
+        <!-- Task 5: First Half of an Even-Length String -->
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">5. First Half of an Even-Length String</h5>
@@ -126,15 +126,23 @@
         }
 
         function findClosestTo100() {
-            let num8 = parseFloat(document.getElementById('num8').value);
-            let num9 = parseFloat(document.getElementById('num9').value);
-            let closest = (Math.abs(100 - num8) < Math.abs(100 - num9)) ? num8 : num9;
-            document.getElementById('result4').innerHTML = `Closest to 100: ${closest}`;
-        }
+    let num8 = parseFloat(document.getElementById('num8').value);
+    let num9 = parseFloat(document.getElementById('num9').value);
+
+    // Check if the two numbers are the same
+    if (num8 === num9) {
+        document.getElementById('result4').innerHTML = "Closest to 100: false";
+        return; // Exit the function early
+    }
+
+    // Find the number closest to 100
+    let closest = (Math.abs(100 - num8) < Math.abs(100 - num9)) ? num8 : num9;
+    document.getElementById('result4').innerHTML = `Closest to 100: ${closest}`;
+}
 
         function extractFirstHalf() {
             let text = document.getElementById('text').value;
-            let result = (text.length % 2 === 0) ? text.slice(0, text.length / 2) : "String length is not even";
+            let result = (text.length % 2 === 0) ? text.slice(0, text.length / 2) : text;
             document.getElementById('result5').innerHTML = `First half: ${result}`;
         }
     </script>
